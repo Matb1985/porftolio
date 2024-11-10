@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt - Web Developer | Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Matt's portfolio as a Web Developer, showcasing projects, skills, and services for businesses and individuals looking to establish a strong online presence.">
+    <meta name="keywords" content="Web Developer, Portfolio, Freelance, Website Design, SEO, Performance Optimization">
+    <meta name="author" content="Matt">
+
+    <!-- Open Graph Meta Tags for Social Media Sharing -->
+    <meta property="og:title" content="Matt - Web Developer | Portfolio">
+    <meta property="og:description" content="Discover Matt's work as a Web Developer, featuring responsive, high-performance websites optimized for SEO and user engagement.">
+    <meta property="og:image" content="https://www.code-craft.org.uk/craft.jpg">
+    <meta property="og:url" content="www.code-craft.org.uk">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Matt - Web Developer | Portfolio">
+    <meta name="twitter:description" content="Browse Matt's web development projects and skills, designed to boost your online presence with optimized, responsive websites.">
+    <meta name="twitter:image" content="https://your-website.com/path-to-high-quality-image.jpg">
+
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Stylesheets and Fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&family=Roboto:wght@400;500&display=swap">
+
+    <!-- JSON-LD Structured Data for Web Developer Profile -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Matt",
+            "jobTitle": "Web Developer",
+            "image": "https://your-website.com/path-to-high-quality-profile-image.jpg",
+            "url": "https://your-website.com",
+            "sameAs": [
+                "https://www.linkedin.com/in/your-profile",
+                "https://twitter.com/your-profile",
+                "https://github.com/your-profile"
+            ],
+            "worksFor": {
+                "@type": "Organization",
+                "name": "CodeCraft"
+            },
+            "alumniOf": "Your University",
+            "knowsAbout": ["Web Development", "SEO", "Performance Optimization", "Responsive Design"]
+        }
+    </script>
+
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #ddd;
+            background-color: #000;
+        }
+
+        /* Navbar */
+        nav {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #c0c0c0;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        nav ul li a:hover {
+            color: #00d4ff;
+        }
+
+        /* Hamburger Menu Icon */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: #c0c0c0;
+            cursor: pointer;
+        }
+
+        /* Responsive Navbar Styles */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block; /* Show hamburger icon on smaller screens */
+            }
+
+            nav ul {
+                display: none; /* Hide menu initially on mobile */
+                flex-direction: column;
+                gap: 10px;
+                position: absolute;
+                top: 60px;
+                right: 15px;
+                background: rgba(0, 0, 0, 0.9);
+                padding: 15px;
+                border-radius: 8px;
+                width: auto;
+            }
+
+            nav ul.show {
+                display: flex; /* Show menu when toggled */
+            }
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            height: 100vh;
+            background: url('codecraft.png') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #c0c0c0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px #00d4ff, 0 0 10px #c0c0c0;
+        }
+
+        header p {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #00d4ff;
+        }
+
+        /* Contact Button Section */
+        .contact-btn-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #111;
+        }
+
+        .contact-btn-section .btn {
+            padding: 10px 25px;
+            font-size: 1rem;
+            background-color: #00d4ff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 15px #00d4ff, 0 0 30px #00d4ff;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-btn-section .btn:hover {
+            background-color: #c0c0c0;
+            color: #000;
+        }
+
+        /* Responsive Background Image for Smaller and Larger Screens */
+        @media (max-width: 768px) {
+            header {
+                height: 50vh;
+                background-size: 90%;
+            }
+
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            header {
+                background-size: 50%;
+            }
+
+            header h1 {
+                font-size: 4rem;
+            }
+            
+            header p {
+                font-size: 1.5rem;
+            }
+        }
+        /* Background image adjustment for mid-sized screens */
+@media (min-width: 768px) and (max-width: 1200px) {
+    header {
+        background-size: 80%; /* Adjusts the background image size for mid screens */
+    }
+}
+
+     
+        /* Sections */
+        section {
+            padding: 50px;
+            text-align: center;
+
+        }
+
+        #portfolio {
+            background-color: #111;
+            color: #c0c0c0;
+
+        }
+
+        #portfolio h2, #skills h2, #contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .projects, .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .project, .skill {
+            width: 100%;
+            max-width: 280px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+
+        }
+
+        .project:hover, .skill a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6), 0 0 15px #00d4ff;
+        }
+
+        /* Interactive Project Image */
+        .project img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Skills Hover Effect */
+        .skill a {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            color: #c0c0c0;
+            text-decoration: none;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            box-shadow: 0 0 10px #00d4ff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #111;
+            color: #c0c0c0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            max-width: 500px;
+            padding: 10px;
+            border: 1px solid #00d4ff;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #c0c0c0;
+        }
+
+        form button {
+            padding: 10px 20px;
+            background-color: #00d4ff;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 15px #00d4ff;
+            transition: background-color 0.3s;
+        }
+
+        form button:hover {
+            background-color: #c0c0c0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 20px;
+            text-align: center;
+            color: #c0c0c0;
+        }
+
+        .project p {
+            color: #00d4ff;
+        }
+
+        .project h3 {
+            color: white;
+        }
+
+        .pOne {
+            text-align: center;
+            font-size: larger;
+            font-weight: bold;
+
+        }
+        .navbar-logo {
+    height: 50px; /* Adjust the height as needed */
+    width: auto; /* Keeps aspect ratio */
+    margin-right: 20px; /* Space between logo and navbar items */
+    vertical-align: middle; /* Aligns it with navbar text */
+}
+
+/* About Section */
+.about-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #111; /* Matches the theme */
+}
+
+.profile-pic {
+    width: 150px; /* Smaller size for profile picture */
+    height: 150px;
+    border-radius: 50%; /* Circular shape */
+    border: 2px solid #00d4ff; /* Neon blue border */
+    box-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 30px #00d4ff; /* Neon blue glow effect */
+    margin-top: 20px;
+}
+
+/* WhatsApp Button Section */
+.whatsapp-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #111; /* Matches theme */
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #000;
+    background-color: #00d4ff; /* Neon blue to match theme */
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff; /* Neon glow */
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #c0c0c0;
+}
+
+.whatsapp-btn i {
+    margin-right: 8px; /* Spacing between icon and text */
+}
+
+.facebook-follow { display: flex;
+    justify-content: center;
+    margin-top: 30px;
+margin-bottom: 30px;    
+    }
+
+    .facebook-follow img { width: 100px;
+        height:auto;
+        background-color: #00d4ff; /* Neon blue to match theme */
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff; /* Neon glow */
+    transition: background-color 0.3s ease;
+
+    }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <span class="menu-toggle">&#9776;</span>
+        <img src="craft.jpg" alt="Code Craft Logo" class="navbar-logo">
+    </a>
+        <ul>     
+          
+
+            <li><a href="#landing">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="landing">
+        <p>Web Developer | Designer | Freelancer</p>
+    </header>
+
+    <!-- Separate Contact Button Section -->
+    <section class="contact-btn-section">
+        <a href="#contact" class="btn">Contact Me</a>
+    </section>
+    <!-- About Section with Picture -->
+<section class="about-section">
+    <img src="matt.jpg".jpg alt="Picture of Matt - Web Developer" class="profile-pic">
+</section>
+<br>
+    <p class="pOne"> "Welcome, Matt here!!<br><br>
+         I create modern, user-friendly websites that are optimized for performance, SEO, and conversions. My work balances design and functionality, ensuring responsive, fast-loading sites that attract and engage users.<br><br> Whether you need a new site or enhancements, I’m here to help your business succeed online. Please view some of my work below. Let’s build something exceptional together!"
+    </p>
+
+    <div class="facebook-follow">
+        
+        <a href="https://www.facebook.com/profile.php?id=61568810270719" target="_blank">
+     
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook Logo" width="50">
+        </a>
+    </div>
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <h2>My Work</h2>
+        <div class="projects">
+            <div class="project">
+                <a href="https://matb1985.github.io/gymrat/" target="_blank">
+                    <img src="hero-image.jpg" alt="Fitness Coaching Website">
+                    <h3>Fitness Coaching</h3>
+                    <p>Modern website with interactive sections for services and testimonials, optimized for all devices.</p>
+                </a>
+            </div>
+            <div class="project">
+                <a href="https://www.divine-gems.co.uk/" target="_blank">
+                    <img src="j5.jpg" alt="Jewelry Business Website">
+                    <h3>Small Business</h3>
+                    <p>One-page website for a jewellry business with an animated hero section and interactive gallery.</p>
+                </a>
+            </div>
+            <div class="project">
+                <a href="https://www.tastytreats.org.uk/" target="_blank">
+                    <img src="cookie.jpg" alt="Cookie Store">
+                    <h3>Cookie Store</h3>
+                    <p>Responsive e-commerce site with a vibrant menu section, ideal for engaging customers.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <div class="skill">
+                <a href="https://en.wikipedia.org/wiki/HTML">HTML</a> <!-- Placeholder link for HTML skill -->
+            </div>
+            <div class="skill">
+                <a href="https://en.wikipedia.org/wiki/CSS">CSS</a> <!-- Placeholder link for CSS skill -->
+            </div>
+            <div class="skill">
+                <a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a> <!-- Placeholder link for JavaScript skill -->
+            </div>
+            
+        </div>
+    </section>
+    <section class="whatsapp-section">
+        <a href="https://wa.me/+447496473349" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i> WhatsApp Me
+        </a>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="https://formspree.io/f/mzzbejke" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 CodeCraft. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+        // Toggle the display of the navigation menu on small screens
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+    </script>
+
+</body>
+</html>
